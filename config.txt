@@ -1,0 +1,43 @@
+//instalação do node e Java
+
+// instalação do Appium e Criação do Device de Teste
+- Appium : http://appium.io/index.html?lang=pt
+
+- Device: instalar o Android Studio e configurar o Device. Nomear o device pois ele será usado na configuração do projeto de teste
+
+// Configuração de variáveis de ambiente para android e java
+
+//Criação do projeto
+
+- Criar projeto e executar o npm init na linha de comando
+
+ - Executar npm install codeceptjs webdriverio --save para instalar o Codeceptjs
+ 
+ - Inicializar com o comando npx codeceptjs init e responder as perguntas
+ 
+ - Configurar o arquivo codeceptjs.conf atualizando as informações do helpers:
+ 
+ helpers: {
+  Appium: {
+    app: "my_app.apk",
+    platform: "Android",
+    desiredCapabilities: {
+        appPackage: "app-package",
+        appActivity: "MainActivity",
+        device: 'name-device',
+        platformVersion: "version-device"
+    }
+  }
+}
+
+// Executar o teste
+
+- ANTES DE EXECUTAR O TESTE, O APPIUM DEVE SER INICIADO. BASTA DIGITAR appium EM UMA NOVA JANELA DO TERMINAL 
+- configuração do arquivo package.json para executar o teste com um comando personalizado:
+  "run": "npx codeceptjs run --steps"
+  executar como: npm run run
+  
+//Configurando Appium Desktop
+
+- alterar a porta da aplicação Dekstop para não ser igual a que roda na linha de comando (para 4727)
+- preencher as informações do Capabilities conforme feito no pacote do projeto
