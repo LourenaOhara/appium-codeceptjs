@@ -41,3 +41,7 @@
 
 - alterar a porta da aplicação Dekstop para não ser igual a que roda na linha de comando (para 4727)
 - preencher as informações do Capabilities conforme feito no pacote do projeto
+
+//Criar Page Objects
+- executar o comando npx codeceptjs gpo
+- inserir a linha do arquivo no include do arquivo codecept.conf.js
